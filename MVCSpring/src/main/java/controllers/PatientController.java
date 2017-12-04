@@ -7,6 +7,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.ModelMap;
 import models.Patient;
 
+import java.util.UUID;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,6 +35,8 @@ public class PatientController {
 		
 		//creating session object
 		Session session=factory.openSession();
+		
+		patient.setPatient_id("P" + UUID.randomUUID().toString());
 		
 		//creating transaction object
 		Transaction t=session.beginTransaction();
