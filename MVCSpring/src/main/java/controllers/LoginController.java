@@ -35,7 +35,8 @@ public class LoginController {
 		//creating session object
 		Session session=factory.openSession();
 		login.setPassword("encrypted");
-		Patient patient = null;
+/*		
+ 		Patient patient = null;
 		patient = (Patient)session.get(Patient.class, login.getLogin_id());
 		if(patient != null) {
 			login.setType("Patient");
@@ -43,6 +44,7 @@ public class LoginController {
 		else {
 			login.setType("Doctor");
 		}
+*/
 		
 		//login.setType("Patient");
 		//creating transaction object
@@ -53,12 +55,16 @@ public class LoginController {
 		session.close();
       model.addAttribute("login_id", login.getLogin_id());
       model.addAttribute("password", login.getPassword());
-      model.addAttribute("type", login.getType());
+      //model.addAttribute("type", login.getType());
       
       // change this to the portal of the specific type
-      String type = login.getType();
-      if(type.equals("Patient")) {
-    	  return "result_login_patient";
+     // String type = login.getType();
+      if(login.getLogin_id().charAt(0) == 'P') {
+    	  Patient patient = null;
+    	  patient = (Patient)session.get(Patient.class, login.getLogin_id());
+    	  if(patient != null) {
+    		  return "result_login_patient";
+    	  }
       }
       return "result_login_doctor";
    }

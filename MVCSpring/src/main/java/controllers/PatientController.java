@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.ModelMap;
 import models.Patient;
 
+import java.util.Random;
 import java.util.UUID;
 
 import org.hibernate.Session;
@@ -35,8 +36,8 @@ public class PatientController {
 		
 		//creating session object
 		Session session=factory.openSession();
-		
-		patient.setPatient_id("P" + UUID.randomUUID().toString());
+		Random random = new Random();
+		patient.setPatient_id("P" + (random.nextInt(90000 - 10000 + 1) + 10000));
 		
 		//creating transaction object
 		Transaction t=session.beginTransaction();
