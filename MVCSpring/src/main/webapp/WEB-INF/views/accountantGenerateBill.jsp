@@ -1,32 +1,56 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <html>
    <head>
-      <title>Spring MVC Form Handling</title>
-   </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Accountant Generate Bill</title>
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
    <body>
 
-      <h2>Student Information</h2>
+      <h2>Generate New Bill</h2>
       <form:form method = "POST" action = "/MVCSpring/accountantGenerateBillPost">
-         <table>
-           
+      
+           <div class="form-group">
             <tr>
-               <td><form:label path = "patient_id">patient_id</form:label></td>
-               <td><form:input path = "patient_id" /></td>
+               <td><form:label class="form-control" path = "patient_id">Patient ID:</form:label></td>
+               <td><form:input class="form-control" path = "patient_id" /></td>
             </tr>
+            </div>
+            <div>
             <tr>
-               <td><form:label path = "bill_id">bil_id</form:label></td>
-               <td><form:input path = "bill_id" /></td>
+               <td><form:label class="form-control" path = "bill_id">Bill ID:</form:label></td>
+               <td><form:input class="form-control" path = "bill_id" /></td>
             </tr>
+            </div>
+            <div>
             <tr>
-               <td><form:label path = "prescription_id">prescription_id</form:label></td>
-               <td><form:input path = "prescription_id" /></td>
+               <td><form:label class="form-control" path = "prescription_id">Prescription ID:</form:label></td>
+               <td><form:input class="form-control" path = "prescription_id" /></td>
             </tr>
+            <div>
             <tr>
                <td colspan = "2">
-                  <input type = "submit" value = "Submit"/>
+                  <input class="btn btn-primary" type = "submit" value = "Submit"/>
                </td>
             </tr>
-         </table>  
+            </div>
       </form:form>
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    </body>
 </html>
