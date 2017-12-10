@@ -11,6 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import HibernateUtil
 
 
 @Controller
@@ -24,15 +25,7 @@ public class DoctorViewController {
    @RequestMapping(value = "/doctorVitalsViewPost", method = RequestMethod.POST)
    public String addPatient(@ModelAttribute("MVCSpring")Patient patient, 
       ModelMap model) {
-	 //creating configuration object
-		/*Configuration cfg=new Configuration();
-		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
-		
-		//creating seession factory object
-		SessionFactory factory=cfg.buildSessionFactory();
-		
-		//creating session object
-		Session session=factory.openSession();*/
+	
 	   	Session session = HibernateUtil.getSessionFromFactory();
 
 		
