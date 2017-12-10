@@ -12,7 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import HibernateUtil
+import controllers.HibernateUtil;
 
 @Controller
 public class DoctorUploadController {
@@ -28,7 +28,7 @@ public class DoctorUploadController {
    public String addPrescription(@ModelAttribute("MVCSpring")Prescription press, 
       ModelMap model) {
 	        
-		Session session=HibernateUtil.getSessionFromFactory()
+		Session session=HibernateUtil.getSessionFromFactory();
 		Patient p=null;
 		p = (Patient)session.get(Patient.class, press.getPatient_id());
 		press.setCurrent_temperature(p.getMost_recent_temperature());
