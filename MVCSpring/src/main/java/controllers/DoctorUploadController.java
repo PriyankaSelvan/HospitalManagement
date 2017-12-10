@@ -27,16 +27,14 @@ public class DoctorUploadController {
    public String addPrescription(@ModelAttribute("MVCSpring")Prescription press, 
       ModelMap model) {
 	 //creating configuration object
-		/*Configuration cfg=new Configuration();
+		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
 		
 		//creating seession factory object
 		SessionFactory factory=cfg.buildSessionFactory();
 		
 		//creating session object
-		Session session=factory.openSession();*/
-	   	Session session = HibernateUtil.getSessionFromFactory();
-
+		Session session=factory.openSession();
 		Patient p=null;
 		p = (Patient)session.get(Patient.class, press.getPatient_id());
 		press.setCurrent_temperature(p.getMost_recent_temperature());
@@ -49,6 +47,7 @@ public class DoctorUploadController {
 		t.commit();//transaction is commited
 		session.close();
       model.addAttribute("patient_id", press.getPatient_id());
+      model.addAttribute("patient_name", p.getName());
       model.addAttribute("prescription_id", press.getPrescription_id());
       model.addAttribute("inventory_id_1", press.getInventory_id_1());
       model.addAttribute("inventory_id_2", press.getInventory_id_2());

@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import models.Prescription;
 import models.Inventory;
 import models.Bill;
+import models.Patient;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -27,16 +28,15 @@ public class AccountantGenerateController {
    public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
 	 //creating configuration object
-		/*Configuration cfg=new Configuration();
+		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
 		
 		//creating seession factory object
 		SessionFactory factory=cfg.buildSessionFactory();
 		
 		//creating session object
-		Session session=factory.openSession();*/
-		Session session = HibernateUtil.getSessionFromFactory();
-
+		Session session=factory.openSession();
+		
 		//creating transaction object
 		Transaction t=session.beginTransaction();
 		Prescription p = null;
@@ -70,11 +70,13 @@ public class AccountantGenerateController {
 		patient.setFinal_cost(final_cost);
 		
 		session.persist(patient);//persisting the object
-		
+		Patient for_name = null;
+		for_name = (Patient)session.get(Patient.class, patient.getPatient_id());
 		t.commit();//transaction is commited
 		session.close();
       model.addAttribute("bill_id", patient.getBill_id());
       model.addAttribute("patient_id", patient.getPatient_id());
+      model.addAttribute("patient_name",for_name.getName());
       model.addAttribute("prescription_id", patient.getPrescription_id());
       model.addAttribute("final_cost", patient.getFinal_cost());
       
