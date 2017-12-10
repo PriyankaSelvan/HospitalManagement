@@ -8,7 +8,7 @@
    </head>
    <body>
 
-      <h2>Hello, I am a patient.</h2>
+      <h2>Hello, I am a pharmacist.</h2>
       <table>
 
          <tr>

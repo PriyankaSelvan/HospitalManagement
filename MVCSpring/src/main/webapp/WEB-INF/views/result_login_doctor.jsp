@@ -8,7 +8,7 @@
    </head>
    <body>
 
-      <h2>Hello, I am a doctor. Unfortunately, there's no table in the database for me yet.</h2>
+      <h2>Hello, I am a doctor.</h2>
       <table>
 
          <tr>
@@ -16,8 +16,12 @@
             <td>${login_id}</td>
          </tr>
          <tr>
+            <td>Name</td>
+            <td>${name}</td>
+         </tr>
+         <tr>
             <td>Password</td>
-            <td>${password}</td>
+            <td>****</td>
          </tr>
 
       </table>  
