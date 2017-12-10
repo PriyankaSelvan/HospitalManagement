@@ -7,6 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.ModelMap;
 import models.Patient;
 
+import java.util.Random;
+import java.util.UUID;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,7 +25,7 @@ public class PatientController {
    }
    
    @RequestMapping(value = "/receptionistPatientUploadPost", method = RequestMethod.POST)
-   public String addPatient(@ModelAttribute("MVCSpring")Patient patient, 
+   public String addStudent(@ModelAttribute("MVCSpring")Patient patient, 
       ModelMap model) {
 	 //creating configuration object
 		Configuration cfg=new Configuration();
@@ -33,6 +36,8 @@ public class PatientController {
 		
 		//creating session object
 		Session session=factory.openSession();
+		Random random = new Random();
+		patient.setPatient_id("P" + (random.nextInt(90000 - 10000 + 1) + 10000));
 		
 		//creating transaction object
 		Transaction t=session.beginTransaction();
