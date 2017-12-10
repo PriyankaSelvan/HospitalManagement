@@ -81,31 +81,31 @@ public class LoginController {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
-		      return "result_login_doctor";
+		      return "doctorPage";
 		  }
 	      else if(checkLogin.getLogin_id().charAt(0) == 'H') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
-		      return "result_login_pharmacist";
+		      return "pharmacistPage";
 		  }
 	      else if(checkLogin.getLogin_id().charAt(0) == 'R') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
-		      return "result_login_pharmacist";
+		      return "receptionistPage";
 		  }
 	      else if(checkLogin.getLogin_id().charAt(0) == 'N') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
-		      return "result_login_pharmacist";
+		      return "nursePage";
 		  }
 	      else if(checkLogin.getLogin_id().charAt(0) == 'A') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
-		      return "result_login_pharmacist";
+		      return "accountantPage";
 		  }
 	      
 	      
