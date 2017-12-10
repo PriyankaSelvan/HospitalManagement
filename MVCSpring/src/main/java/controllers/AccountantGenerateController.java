@@ -28,8 +28,8 @@ public class AccountantGenerateController {
    @RequestMapping(value = "/accountantGenerateBillPost", method = RequestMethod.POST)
    public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
-	
-		Transaction t=HibernateUtil.getSessionFromFactory().beginTransaction();
+	        Session session = HibernateUtil.getSessionFromFactory()
+		Transaction t=session.beginTransaction();
 		Prescription p = null;
 		Inventory i1 = null;
 		Inventory i2 = null;
