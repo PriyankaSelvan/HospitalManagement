@@ -27,15 +27,16 @@ public class AccountantGenerateController {
    public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
 	 //creating configuration object
-		Configuration cfg=new Configuration();
+		/*Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
 		
 		//creating seession factory object
 		SessionFactory factory=cfg.buildSessionFactory();
 		
 		//creating session object
-		Session session=factory.openSession();
-		
+		Session session=factory.openSession();*/
+		Session session = HibernateUtil.getSessionFromFactory();
+
 		//creating transaction object
 		Transaction t=session.beginTransaction();
 		Prescription p = null;
