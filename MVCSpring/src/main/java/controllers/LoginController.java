@@ -27,14 +27,16 @@ public class LoginController {
    public String addStudent(@ModelAttribute("MVCSpring")Login login, 
       ModelMap model) {
 	 //creating configuration object
-		Configuration cfg=new Configuration();
+		/*Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
 		
 		//creating session factory object
 		SessionFactory factory=cfg.buildSessionFactory();
 		
 		//creating session object
-		Session session=factory.openSession();
+		Session session=factory.openSession();*/
+	   	   Session session = HibernateUtil.getSessionFromFactory();
+
 		//login.setPassword("encrypted");
 /*		
  		Patient patient = null;
