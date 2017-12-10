@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.ModelMap;
 import models.Login;
 import models.Patient;
+import models.Staff;
 import models.Doctor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,7 +35,7 @@ public class LoginController {
 		
 		//creating session object
 		Session session=factory.openSession();
-		login.setPassword("encrypted");
+		//login.setPassword("encrypted");
 /*		
  		Patient patient = null;
 		patient = (Patient)session.get(Patient.class, login.getLogin_id());
@@ -48,24 +49,59 @@ public class LoginController {
 		
 		//login.setType("Patient");
 		//creating transaction object
-		Transaction t=session.beginTransaction();
-		session.persist(login);//persisting the object
+		//Transaction t=session.beginTransaction();
+		//session.persist(login);//persisting the object
+		
+		//t.commit();//transaction is committed
+		//session.close();
+      
+      //model.addAttribute("type", login.getType());
+      Transaction t=session.beginTransaction();
+      Login checkLogin = (Login)session.get(Login.class, login.getLogin_id());//getting the object
 		
 		t.commit();//transaction is committed
-		session.close();
-      model.addAttribute("login_id", login.getLogin_id());
+		//session.close();
+		//System.out.println(checkLogin.getPassword() + "\t" + login.getPassword());
+	  if(checkLogin.getPassword().equals(login.getPassword())) {
+	    	  
+	      
+	      // change this to the portal of the specific type
+	     // String type = login.getType();
+	      if(checkLogin.getLogin_id().charAt(0) == 'P') {
+	    	  Patient patient = null;
+	    	  patient = (Patient)session.get(Patient.class, checkLogin.getLogin_id());
+	    	  if(patient != null) {
+	    		  model.addAttribute("login_id", checkLogin.getLogin_id());
+	    	      model.addAttribute("password", checkLogin.getPassword());
+	    		  model.addAttribute("name", patient.getName());
+	    		  return "result_login_patient";
+	    	  }
+	      }
+	      else if(checkLogin.getLogin_id().charAt(0) == 'D') {
+	    	  Staff staff = null;
+	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
+		      model.addAttribute("login_id", checkLogin.getLogin_id());
+		      model.addAttribute("password", checkLogin.getPassword());
+		      model.addAttribute("name", staff.getName());
+		      return "result_login_doctor";
+		  }
+	      else if(checkLogin.getLogin_id().charAt(0) == 'H') {
+	    	  Staff staff = null;
+	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
+		      model.addAttribute("login_id", checkLogin.getLogin_id());
+		      model.addAttribute("password", checkLogin.getPassword());
+		      model.addAttribute("name", staff.getName());
+		      return "result_login_pharmacist";
+		  }
+	      
+	  }
+	  
+	  model.addAttribute("login_id", login.getLogin_id());
       model.addAttribute("password", login.getPassword());
-      //model.addAttribute("type", login.getType());
-      
-      // change this to the portal of the specific type
-     // String type = login.getType();
-      if(login.getLogin_id().charAt(0) == 'P') {
-    	  Patient patient = null;
-    	  patient = (Patient)session.get(Patient.class, login.getLogin_id());
-    	  if(patient != null) {
-    		  return "result_login_patient";
-    	  }
-      }
-      return "result_login_doctor";
+	 // model.addAttribute("name", patient.getName());
+	  //return "result_login_doctor";
+	  return "result_login_error";
+	  
+
    }
 }
