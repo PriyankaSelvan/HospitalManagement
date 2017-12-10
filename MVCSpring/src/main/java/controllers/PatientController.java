@@ -28,14 +28,16 @@ public class PatientController {
    public String addStudent(@ModelAttribute("MVCSpring")Patient patient, 
       ModelMap model) {
 	 //creating configuration object
-		Configuration cfg=new Configuration();
+		/*Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
 		
 		//creating seession factory object
 		SessionFactory factory=cfg.buildSessionFactory();
 		
 		//creating session object
-		Session session=factory.openSession();
+		Session session=factory.openSession();*/
+	   	Session session = HibernateUtil.getSessionFromFactory();
+
 		Random random = new Random();
 		patient.setPatient_id("P" + (random.nextInt(90000 - 10000 + 1) + 10000));
 		
