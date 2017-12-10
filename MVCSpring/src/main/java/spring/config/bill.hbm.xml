@@ -5,7 +5,7 @@
 
           <hibernate-mapping>
           <class name="models.Bill" table="Bill">
-          <id name="patient_id">
+          <id name="bill_id">
           <generator class="assigned"></generator>
           </id>
           
