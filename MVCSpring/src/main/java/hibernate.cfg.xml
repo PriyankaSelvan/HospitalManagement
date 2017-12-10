@@ -20,11 +20,14 @@
 
 <!-- Echo all executed SQL to stdout -->  
 <property name="show_sql">true</property> 
-<property name="hibernate.hbm2ddl.auto">update</property>
+<property name="hibernate.hbm2ddl.auto">create</property>
  
 <mapping resource = "patient.hbm.xml"/>
 <mapping resource = "inventory.hbm.xml"/>
 <mapping resource = "prescription.hbm.xml" />
 <mapping resource = "bill.hbm.xml" />
+<mapping resource = "staff.hbm.xml" />
+<mapping resource = "login.hbm.xml" />
+
 </session-factory> 
 </hibernate-configuration>
