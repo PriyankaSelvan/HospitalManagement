@@ -60,6 +60,8 @@ public class LoginController {
       Login checkLogin = (Login)session.get(Login.class, login.getLogin_id());//getting the object
 		
 		t.commit();//transaction is committed
+		model.addAttribute("login_id", login.getLogin_id());
+	      model.addAttribute("password", login.getPassword());
 		//session.close();
 		//System.out.println(checkLogin.getPassword() + "\t" + login.getPassword());
 	  if(checkLogin.getPassword().equals(login.getPassword())) {
@@ -71,8 +73,6 @@ public class LoginController {
 	    	  Patient patient = null;
 	    	  patient = (Patient)session.get(Patient.class, checkLogin.getLogin_id());
 	    	  if(patient != null) {
-	    		  model.addAttribute("login_id", checkLogin.getLogin_id());
-	    	      model.addAttribute("password", checkLogin.getPassword());
 	    		  model.addAttribute("name", patient.getName());
 	    		  return "result_login_patient";
 	    	  }
@@ -80,24 +80,38 @@ public class LoginController {
 	      else if(checkLogin.getLogin_id().charAt(0) == 'D') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
-		      model.addAttribute("login_id", checkLogin.getLogin_id());
-		      model.addAttribute("password", checkLogin.getPassword());
 		      model.addAttribute("name", staff.getName());
 		      return "result_login_doctor";
 		  }
 	      else if(checkLogin.getLogin_id().charAt(0) == 'H') {
 	    	  Staff staff = null;
 	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
-		      model.addAttribute("login_id", checkLogin.getLogin_id());
-		      model.addAttribute("password", checkLogin.getPassword());
+		      model.addAttribute("name", staff.getName());
+		      return "result_login_pharmacist";
+		  }
+	      else if(checkLogin.getLogin_id().charAt(0) == 'R') {
+	    	  Staff staff = null;
+	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
+		      model.addAttribute("name", staff.getName());
+		      return "result_login_pharmacist";
+		  }
+	      else if(checkLogin.getLogin_id().charAt(0) == 'N') {
+	    	  Staff staff = null;
+	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
+		      model.addAttribute("name", staff.getName());
+		      return "result_login_pharmacist";
+		  }
+	      else if(checkLogin.getLogin_id().charAt(0) == 'A') {
+	    	  Staff staff = null;
+	    	  staff = (Staff)session.get(Staff.class, checkLogin.getLogin_id());
 		      model.addAttribute("name", staff.getName());
 		      return "result_login_pharmacist";
 		  }
 	      
+	      
 	  }
 	  
-	  model.addAttribute("login_id", login.getLogin_id());
-      model.addAttribute("password", login.getPassword());
+	  
 	 // model.addAttribute("name", patient.getName());
 	  //return "result_login_doctor";
 	  return "result_login_error";
