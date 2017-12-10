@@ -22,7 +22,7 @@ public class PatientController {
    }
    
    @RequestMapping(value = "/receptionistPatientUploadPost", method = RequestMethod.POST)
-   public String addStudent(@ModelAttribute("MVCSpring")Patient patient, 
+   public String addPatient(@ModelAttribute("MVCSpring")Patient patient, 
       ModelMap model) {
 	 //creating configuration object
 		Configuration cfg=new Configuration();

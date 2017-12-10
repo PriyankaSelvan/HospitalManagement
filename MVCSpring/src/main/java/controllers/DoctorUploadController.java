@@ -24,7 +24,7 @@ public class DoctorUploadController {
    }
    
    @RequestMapping(value = "/doctorPrescriptionUploadPost", method = RequestMethod.POST)
-   public String addStudent(@ModelAttribute("MVCSpring")Prescription press, 
+   public String addPrescription(@ModelAttribute("MVCSpring")Prescription press, 
       ModelMap model) {
 	 //creating configuration object
 		Configuration cfg=new Configuration();

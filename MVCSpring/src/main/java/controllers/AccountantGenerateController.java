@@ -24,7 +24,7 @@ public class AccountantGenerateController {
    }
    
    @RequestMapping(value = "/accountantGenerateBillPost", method = RequestMethod.POST)
-   public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
+   public String addBill(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
 	 //creating configuration object
 		Configuration cfg=new Configuration();

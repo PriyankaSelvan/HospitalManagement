@@ -17,7 +17,7 @@ public class PharmacistUploadController {
    }
    
    @RequestMapping(value = "/pharmacistUploadPost", method = RequestMethod.POST)
-   public String addStudent(@ModelAttribute("MVCSpring")InventoryFacade press, 
+   public String addInventory(@ModelAttribute("MVCSpring")InventoryFacade press, 
       ModelMap model) {
 	  press.updateDB(press);
 	 
