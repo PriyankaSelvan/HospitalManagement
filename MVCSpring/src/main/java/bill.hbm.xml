@@ -10,7 +10,7 @@
           </id>
           
           
-          <property name="patient_id" type="int" column="patient" />
+          <property name="patient_id" type="string" column="patient" />
           <property name="prescription_id" type = "int" column="prescription"/>
           <property name="final_cost" type = "double" column = "cost"/>
           

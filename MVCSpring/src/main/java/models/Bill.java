@@ -9,7 +9,7 @@ public class Bill {
 	public void setPrescription_id(Integer prescription_id) {
 		this.prescription_id = prescription_id;
 	}
-	private Integer patient_id;
+	private String patient_id;
 	private Double final_cost=0.0;
 	public Integer getBill_id() {
 		return bill_id;
@@ -17,10 +17,10 @@ public class Bill {
 	public void setBill_id(Integer bill_id) {
 		this.bill_id = bill_id;
 	}
-	public Integer getPatient_id() {
+	public String getPatient_id() {
 		return patient_id;
 	}
-	public void setPatient_id(Integer patient_id) {
+	public void setPatient_id(String patient_id) {
 		this.patient_id = patient_id;
 	}
 	public Double getFinal_cost() {

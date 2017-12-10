@@ -11,7 +11,7 @@
           
           
           
-          <property name="patient_id" type = "int" column="Patient"/>
+          <property name="patient_id" type = "string" column="Patient"/>
           <property name="current_temperature" type = "double" column="CurrentTemperature"/>
           <property name="current_pressure" type = "double" column="CurrentPressure"/>
           <property name="inventory_id_1" type = "int" column = "Inventory1"/>

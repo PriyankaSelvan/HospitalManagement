@@ -24,7 +24,7 @@ public class AccountantGenerateController {
    }
    
    @RequestMapping(value = "/accountantGenerateBillPost", method = RequestMethod.POST)
-   public String addBill(@ModelAttribute("MVCSpring")Bill patient, 
+   public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
 	 //creating configuration object
 		Configuration cfg=new Configuration();
@@ -74,7 +74,7 @@ public class AccountantGenerateController {
 		session.close();
       model.addAttribute("bill_id", patient.getBill_id());
       model.addAttribute("patient_id", patient.getPatient_id());
-      model.addAttribute("patient_id", patient.getPrescription_id());
+      model.addAttribute("prescription_id", patient.getPrescription_id());
       model.addAttribute("final_cost", patient.getFinal_cost());
       
       

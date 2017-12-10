@@ -1,11 +1,11 @@
 package models;
 
 public class Prescription {
-	private Integer patient_id;
-	public Integer getPatient_id() {
+	private String patient_id;
+	public String getPatient_id() {
 		return patient_id;
 	}
-	public void setPatient_id(Integer patient_id) {
+	public void setPatient_id(String patient_id) {
 		this.patient_id = patient_id;
 	}
 	private Double current_temperature=0.0;
