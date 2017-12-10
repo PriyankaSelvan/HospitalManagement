@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Accountant Generate Bill</title>
+    <title>Generate Bill</title>
 
     <!-- Bootstrap -->
     <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
@@ -18,32 +18,33 @@
     <![endif]-->
   </head>
    <body>
-
-      <h2>Generate New Bill</h2>
+<div class="col-md-2 col-md-offset-5">
+      <h2>Generate Bill</h2>
+      </div>
       <form:form method = "POST" action = "/MVCSpring/accountantGenerateBillPost">
       
-           <div class="form-group">
+           <div class="col-md-2 col-md-offset-5">
             <tr>
                <td><form:label class="form-control" path = "patient_id">Patient ID:</form:label></td>
                <td><form:input class="form-control" path = "patient_id" /></td>
             </tr>
             </div>
-            <div>
+            <div class="col-md-2 col-md-offset-5">
             <tr>
                <td><form:label class="form-control" path = "bill_id">Bill ID:</form:label></td>
                <td><form:input class="form-control" path = "bill_id" /></td>
             </tr>
             </div>
-            <div>
+            <div class="col-md-2 col-md-offset-5">
             <tr>
                <td><form:label class="form-control" path = "prescription_id">Prescription ID:</form:label></td>
                <td><form:input class="form-control" path = "prescription_id" /></td>
             </tr>
-            <div>
+            <div class="center-block">
             <tr>
-               <td colspan = "2">
+               
                   <input class="btn btn-primary" type = "submit" value = "Submit"/>
-               </td>
+              
             </tr>
             </div>
       </form:form>

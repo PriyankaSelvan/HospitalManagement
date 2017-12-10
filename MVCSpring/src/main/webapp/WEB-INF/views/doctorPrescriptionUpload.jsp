@@ -1,50 +1,101 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <html>
    <head>
-      <title>Spring MVC Form Handling</title>
-   </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Upload Prescription</title>
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
    <body>
-      
-      <h2>Patient Information</h2>
+   <div class = "row">
+    <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+      <h2>Upload Prescription</h2>
+      </div></div>
       <form:form method = "POST" action = "/MVCSpring/doctorPrescriptionUploadPost">
-         <table>
-           
+          <div class = "row">
+          <div class="col-sm-4"></div>
+           <div class="col-sm-4">
             <tr>
-               <td><form:label path = "prescription_id">prescription_id</form:label></td>
-               <td><form:input path = "prescription_id" /></td>
+               <td><form:label class="form-control" path = "prescription_id">Prescription ID:</form:label></td>
+               <td><form:input class="form-control" path = "prescription_id" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "patient_id">patient_id</form:label></td>
-               <td><form:input path = "patient_id" /></td>
+               <td><form:label class="form-control" path = "patient_id">Patient ID:</form:label></td>
+               <td><form:input class="form-control" path = "patient_id" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "inventory_id_1">inventory_id_1</form:label></td>
-               <td><form:input path = "inventory_id_1" /></td>
+               <td><form:label class="form-control" path = "inventory_id_1">Inventory ID 1:</form:label></td>
+               <td><form:input class="form-control" path = "inventory_id_1" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "inventory_id_2">inventory_id_2</form:label></td>
-               <td><form:input path = "inventory_id_2" /></td>
+               <td><form:label class="form-control" path = "inventory_id_2">Inventory ID 2:</form:label></td>
+               <td><form:input class="form-control" path = "inventory_id_2" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "inventory_id_3">inventory_id_3</form:label></td>
-               <td><form:input path = "inventory_id_3" /></td>
+               <td><form:label class="form-control" path = "inventory_id_3">Inventory ID 3:</form:label></td>
+               <td><form:input class="form-control" path = "inventory_id_3" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "inventory_id_4">inventory_id_4</form:label></td>
-               <td><form:input path = "inventory_id_4" /></td>
+               <td><form:label class="form-control" path = "inventory_id_4">Inventory ID 4:</form:label></td>
+               <td><form:input class="form-control" path = "inventory_id_4" /></td>
             </tr>
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td><form:label path = "inventory_id_5">inventory_id_5</form:label></td>
-               <td><form:input path = "inventory_id_5" /></td>
+               <td><form:label class="form-control" path = "inventory_id_5">Inventory ID 5:</form:label></td>
+               <td><form:input class="form-control" path = "inventory_id_5" /></td>
             </tr>
-            
+            </div></div>
+             <div class = "row">
+             <div class="col-sm-4"></div>
+            <div class="col-sm-4">
             <tr>
-               <td colspan = "2">
-                  <input type = "submit" value = "Submit"/>
-               </td>
+               
+                  <input class="btn btn-primary" type = "submit" value = "Submit"/>
+               
             </tr>
-         </table>  
+            </div></div>
+          
       </form:form>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    </body>
 </html><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
