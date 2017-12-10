@@ -46,6 +46,14 @@
     <div class="col-sm-4"></div>
       <div class="col-sm-4">
          <tr>
+            <td>Patient Name</td>
+            <td>${patient_name}</td>
+         </tr>
+         </div></div>
+         <div class = "row">
+    <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+         <tr>
             <td>Inventory</td>
             <td>${inventory_id_1}</td>
          </tr>

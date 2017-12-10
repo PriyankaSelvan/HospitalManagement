@@ -43,6 +43,14 @@
             <td>${patient_id}</td>
          </tr>
          </div></div>
+          <div class = "row">
+    <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+         <tr>
+            <td>Patient name</td>
+            <td>${patient_name}</td>
+         </tr>
+         </div></div>
          <div class = "row">
     <div class="col-sm-4"></div>
       <div class="col-sm-4">
