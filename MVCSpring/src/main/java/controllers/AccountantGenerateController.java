@@ -14,6 +14,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import HibernateUtil
 
 
 @Controller
@@ -27,18 +28,8 @@ public class AccountantGenerateController {
    @RequestMapping(value = "/accountantGenerateBillPost", method = RequestMethod.POST)
    public String addStudent(@ModelAttribute("MVCSpring")Bill patient, 
       ModelMap model) {
-	 //creating configuration object
-		Configuration cfg=new Configuration();
-		cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file
-		
-		//creating seession factory object
-		SessionFactory factory=cfg.buildSessionFactory();
-		
-		//creating session object
-		Session session=factory.openSession();
-		
-		//creating transaction object
-		Transaction t=session.beginTransaction();
+	
+		Transaction t=HibernateUtil.getSessionFromFactory().beginTransaction();
 		Prescription p = null;
 		Inventory i1 = null;
 		Inventory i2 = null;
